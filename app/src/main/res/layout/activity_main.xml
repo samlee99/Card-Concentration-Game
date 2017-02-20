@@ -10,16 +10,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.samlee.cs245application.MainActivity">
 
-    <TextView
+    <Button
+        android:text="Try Again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentRight="true"
+        android:onClick="tryAgainClicked"
+        android:id="@+id/tryAgain" />
 
     <Button
-        android:text="Button"
+        android:text="New Game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button" />
+        android:layout_alignParentRight="true"
+        android:onClick="newGameClicked"
+        android:id="@+id/newGame" />
+
+    <Button
+        android:text="End Game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="endGameClicked"
+        android:id="@+id/endGame" />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/endGame"
+        android:layout_toLeftOf="@+id/endGame">
+    </GridView>
 </RelativeLayout>

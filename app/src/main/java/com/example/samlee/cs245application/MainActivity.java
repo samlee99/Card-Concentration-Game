@@ -11,4 +11,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
+
+    public void tryAgainClicked(){
+
+
+
+    }
+
+
+
+    public void newGameClicked(){
+
+    
+
+    }
+
+
+    
+    public void endGameClicked(){
+
+
+    
+    }
 }
