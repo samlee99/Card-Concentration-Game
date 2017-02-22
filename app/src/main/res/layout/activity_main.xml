@@ -11,21 +11,12 @@
     tools:context="com.example.samlee.cs245application.MainActivity">
 
     <Button
-        android:text="Try Again"
+        android:text="@string/try_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:onClick="tryAgainClicked"
         android:id="@+id/tryAgain" />
-
-    <Button
-        android:text="New Game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:onClick="newGameClicked"
-        android:id="@+id/newGame" />
 
     <Button
         android:text="End Game"
@@ -43,4 +34,27 @@
         android:layout_toStartOf="@+id/endGame"
         android:layout_toLeftOf="@+id/endGame">
     </GridView>
+
+    <Button
+        android:text="New Game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="newGameClicked"
+        android:id="@+id/newGame"
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/endGame"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:text="@string/mute_game_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:id="@+id/pauseCheckBox"
+        android:textAlignment="viewStart"
+        android:textSize="12sp"
+        android:layout_below="@+id/tryAgain"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
