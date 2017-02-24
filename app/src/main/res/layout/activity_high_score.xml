@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@drawable/background"
     android:id="@+id/activity_high_scores">
 
     <TextView
@@ -14,5 +14,6 @@
         android:layout_height="wrap_content"
         android:textSize="36sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
 </RelativeLayout>
