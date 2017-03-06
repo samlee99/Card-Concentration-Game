@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8e40edd109569fc8913948dbf07efcc4662f60e7\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\PC\.android\build-cache\1ac1babc3a2f598fa55ba66d7f405ad057cdd5f3\output\jars\classes.jar"
         jumboMode="false"
@@ -27,6 +36,15 @@
         revision="25.0.2"
         sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
         <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_7fc20acdc6d64842f6d86a14c19758ba7eb669e5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="942cd562cde69ffd10589273582306e9bd42c692">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e9138ddfafce8eddc586daeedb39a5617c596b51\classes.dex" />
     </item>
     <item
         is-multidex="false"

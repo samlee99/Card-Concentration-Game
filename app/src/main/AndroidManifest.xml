@@ -18,6 +18,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".HighScoresActivity"></activity>
+        <activity android:name=".Game4x4Activity"></activity>
     </application>
 
 </manifest>

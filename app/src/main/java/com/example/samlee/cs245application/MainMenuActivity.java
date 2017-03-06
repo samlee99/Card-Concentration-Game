@@ -91,7 +91,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
     //Starts the concentration game
     public void playButton(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Game4x4Activity.class);
         startActivity(intent);
         finish();
     }
