@@ -3,102 +3,102 @@
 
     <item
         is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.1_6ec27f9b547591317e7d39307103160f13949715.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.1_c535c813945c7db3d81cf54e4e97dadbf2f2e460.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.1_deed3cbe727286659e6f1a8b391efb391ccbb3e2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.1_48a8024fe19d7ca024639530d60bb0408d6c727e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.1_526e75708f6b1672ed84e7471f73820bca7e9788.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.1_2c13a448a638929d247a220fcc16fafaede05422.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.1_885f7f08df0718661394ef5091317780697f4874.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.1_976fd3738ffadb13e668361a3ced717d5603f146.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
+        jar="C:\Users\PC\.android\build-cache\1ac1babc3a2f598fa55ba66d7f405ad057cdd5f3\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.1_d7a60e7e57e4d34a7988cd64057f03c09cf570be.jar" />
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_5789f3a20c0257034d953a08214ccdb2a8fdd3b1.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jar="C:\Users\PC\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.1_ea4bdbe3b794bfeb2988eeaddf27c2ff4eb1d86c.jar" />
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_87c5a69b0bab9c41b81c446085f19e4f8e714b03.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.1/jars/classes.jar"
+        jar="C:\Users\PC\.android\build-cache\3916b876d125a613947b4a7f7c877b8dee300d1a\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
-        <dex dex="/Users/samlee/Documents/android/cs245-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.1.1_48d7370b6ad8e5ff8e6b722d420ba100d9ecac7e.jar" />
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_7fc20acdc6d64842f6d86a14c19758ba7eb669e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\d0a9367ed5e6d7105912050087dbc8f190b06c7a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_32c29a8950346f4801cc6cb55323ad9bb612ccb6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\4409d87570d4307a42b40f9482d1647976a70974\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_ff92fc43592777c2a8fc4349380fee8e3ad0f6bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\a68aede791e3a51f709ad0f6f0cc45564a6150d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_f7c86b52dfc913bbd049f9084bb7c066c20c008c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\27eae27f65917f10c80592bc8892974f576b61dd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_7583daadb663e0495cef9aa636372eeadba42480.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\b0cd9320adfcf71d9046e5462678b701517c42bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_e3b1275e72000616e4382ee8858da409a957e4ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\6d06871d8c887f0398ba61b7efb867e8b80cf8cb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_80f714068cbf2a7c57ac88cef3bfef3f7621f0e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\c432c8381689c021e66263fcde2fea419ca2b462\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_fdfb901a2e8e2b5e52d8d1f689f718894b5f4d9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\PC\.android\build-cache\f03cda759b5e45087ed0b238be5d302388d1f317\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\PC\Documents\newfolder\cs245-android-app\app\build\intermediates\pre-dexed\debug\classes_dd3bb0b40e0a68900c565138bc2c2ea695e91020.jar" />
     </item>
 
 </items>
