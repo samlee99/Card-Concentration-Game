@@ -48,7 +48,7 @@
         android:text="@string/mute_game_music"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="6dp"
         android:id="@+id/pauseCheckBox"
         android:textAlignment="viewStart"
         android:textSize="12sp"
