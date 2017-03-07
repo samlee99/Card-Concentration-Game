@@ -15,9 +15,18 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity" />
-        <activity android:name=".HighScoresActivity"></activity>
-        <activity android:name=".Game4x4Activity"></activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:configChanges="screenLayout|orientation|screenSize">
+        </activity>
+        <activity
+            android:name=".HighScoresActivity"
+            android:configChanges="screenLayout|orientation|screenSize">
+        </activity>
+        <activity
+            android:name=".Game4x4Activity"
+            android:configChanges="screenLayout|orientation|screenSize">
+        </activity>
     </application>
 
 </manifest>
