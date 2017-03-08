@@ -93,7 +93,6 @@ public class MainMenuActivity extends AppCompatActivity {
     public void playButton(View view) {
         Intent intent = new Intent(this, Game4x4Activity.class);
         startActivity(intent);
-        finish();
     }
 
     @Override
