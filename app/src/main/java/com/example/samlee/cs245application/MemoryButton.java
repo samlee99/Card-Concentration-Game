@@ -81,6 +81,12 @@ public class MemoryButton extends AppCompatButton {
         return frontDrawableId;
     }
 
+    //method: getIsFlipped
+    //purpose: returns that the card is flipped.
+    public boolean getIsFlipped() {
+        return isFlipped;
+    }
+
     //method: flip
     //purpose: sets the cards whether they are flipped or not
     public void flip()
