@@ -1,3 +1,15 @@
+/***************************************************************
+ * file: MainMenuActivity.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 3/8/2017
+ *
+ * purpose: This file is for the main menu.  Contains the
+ * buttons for other options.
+ *
+ ****************************************************************/
 package com.example.samlee.cs245application;
 
 import android.content.Intent;
@@ -31,7 +43,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public static int numColumns;
     public static int numRows;
-
+    
+//method: onCreate
+    //purpose: This method controls the music and layout of main menu.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +72,9 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
     }
-
+    
+//method: creditsButton
+    //purpose: Creates the credits button
     public void creditsButton(View view) {
         ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_credits,null);
 
@@ -77,7 +93,9 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
     }
-
+    
+    //method: highScoresButton
+     //purpose: Creates the highscore button 
     public void highScoresButton(View view) {
         Intent intent = new Intent(this, HighScoresActivity.class);
         startActivity(intent);
@@ -99,7 +117,8 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });*/
     }
-    //Starts the concentration game
+    //method: playButton
+    //purpose: Starts the concentration game
     public void playButton(View view) {
         Intent intent = new Intent(this, Game4x4Activity.class);
         col = (EditText) findViewById(R.id.columnText);
@@ -117,7 +136,8 @@ public class MainMenuActivity extends AppCompatActivity {
         else
             startActivity(intent);
     }
-
+//method check
+    //checks if the user entered a correct grid size
     public boolean check(int c, int r)
     {
         if (((c * r) > 21)) {
@@ -127,7 +147,8 @@ public class MainMenuActivity extends AppCompatActivity {
         }
         return false;
     }
-
+//method: onPause
+    //purpose: Pause functionality
     @Override
     protected void onPause() {
         super.onPause();
