@@ -1,3 +1,15 @@
+
+/***************************************************************
+ * file: HighScoresActivity.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 2/28/2017
+ *
+ * purpose: This file manages the high scores for the game.
+ *
+ ****************************************************************/
 package com.example.samlee.cs245application;
 
 import android.app.Activity;
@@ -24,6 +36,8 @@ import java.io.OutputStreamWriter;
 public class HighScoresActivity extends Activity {
     TextView score;
     @Override
+    //method: onCreate
+    //purpose: This displays the scores.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
@@ -31,12 +45,15 @@ public class HighScoresActivity extends Activity {
         score.setText("");
         readScore(this);
     }
+    //method: onBackPressed
+    //purpose: This brings you back to the main menu
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this, MainMenuActivity.class));
         finish();
     }
-
+//method: resetScore
+    //purpose: This method resets the scores file.
     public void resetScore(View view) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.openFileOutput("scores.txt", Context.MODE_PRIVATE));
@@ -48,7 +65,8 @@ public class HighScoresActivity extends Activity {
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
-
+//method:readScore
+    //purpose: This opens the scores text and combines them into a string.
     private String readScore(Context context) {
         String ret = "";
 
