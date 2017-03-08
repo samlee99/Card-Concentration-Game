@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
@@ -24,6 +25,11 @@ public class MainMenuActivity extends AppCompatActivity {
     private LayoutInflater layoutInflater;
     private RelativeLayout relativeLayout;
 
+    private EditText col;
+    private EditText row;
+
+    public static int numColumns;
+    public static int numRows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +101,12 @@ public class MainMenuActivity extends AppCompatActivity {
     //Starts the concentration game
     public void playButton(View view) {
         Intent intent = new Intent(this, Game4x4Activity.class);
+        col = (EditText) findViewById(R.id.columnText);
+        row = (EditText) findViewById(R.id.rowText);
+        String co = col.getText().toString();
+        String ro = row.getText().toString();
+        numColumns = Integer.parseInt(co);
+        numRows = Integer.parseInt(ro);
         startActivity(intent);
     }
 

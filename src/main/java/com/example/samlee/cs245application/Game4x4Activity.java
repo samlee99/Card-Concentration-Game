@@ -37,11 +37,8 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
 
-    public static int numColumns;
-    public static int numRows;
-
-    private TextView col;
-    private TextView row;
+    private int numColumns;
+    private int numRows;
 
     private int score;
     private String user;
@@ -57,12 +54,9 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4);
         score = 0;
-        col = (EditText) findViewById(R.id.columnText);
-        row = (EditText) findViewById(R.id.rowText);
-        String co = col.getText().toString();
-        String ro = row.getText().toString();
-        numColumns = Integer.parseInt(co);
-        numRows = Integer.parseInt(ro);
+        MainMenuActivity main = new MainMenuActivity();
+        numColumns = (int) main.numColumns;
+        numRows = (int) main.numRows;
         GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
 
         numberOfElements = numColumns * numRows;
