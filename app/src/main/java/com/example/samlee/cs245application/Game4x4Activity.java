@@ -15,6 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.os.Handler;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -36,10 +37,14 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
 
+    private int numColumns;
+    private int numRows;
+
     private int score;
     private String user;
-    private String gridNumber = "4x5"; //should be changed to whatever user specified grid
+    private String gridNumber = ""; //should be changed to whatever user specified grid
 
+    private TextView scoreText;
     private boolean isBusy = false;
 
     private int paused;
@@ -50,16 +55,19 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4);
         score = 0;
+        scoreText = (TextView) findViewById(R.id.myScore);
+        scoreText.setText("0");
+        MainMenuActivity main = new MainMenuActivity();
+        numColumns = (int) main.numColumns;
+        numRows = (int) main.numRows;
+        gridNumber = ""+numRows+"x"+numColumns;
         GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
-
-        int numColumns = gridLayout.getColumnCount();
-        int numRows = gridLayout.getRowCount();
 
         numberOfElements = numColumns * numRows;
 
         buttons = new MemoryButton[numberOfElements];
 
-        buttonGraphics = new int[numberOfElements / 2];
+        buttonGraphics = new int[20 / 2];
 
         buttonGraphics[0] = R.drawable.morty_1;
         buttonGraphics[1] = R.drawable.morty_2;
@@ -134,29 +142,26 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        if(isBusy)
+        if (isBusy)
             return;
 
-        MemoryButton button =  (MemoryButton) view;
+        MemoryButton button = (MemoryButton) view;
 
-        if(button.isMatched)
+        if (button.isMatched)
             return;
 
         //clicked a valid button and am waiting for your next one
-        if(selectedButton1 == null)
-        {
+        if (selectedButton1 == null) {
             selectedButton1 = button;
             selectedButton1.flip();
             return;
         }
         //checks to see if user pressed the button twice
-        if(selectedButton1.getId() == button.getId())
-        {
+        if (selectedButton1.getId() == button.getId()) {
             return;
         }
         //think button should be selected button 2
-        if(selectedButton1.getFrontDrawableId() ==  button.getFrontDrawableId())
-        {
+        if (selectedButton1.getFrontDrawableId() == button.getFrontDrawableId()) {
             button.flip();
 
             button.setMatched(true);
@@ -167,21 +172,23 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
             selectedButton1 = null;
 
-            MediaPlayer success = MediaPlayer.create(this,R.raw.success);
+            MediaPlayer success = MediaPlayer.create(this, R.raw.success);
             success.setLooping(false);
             success.start();
             score += 2;
+            scoreText.setText(""+score);
             return;
         }
         //two cards not the same
-        else
-        {
+        else {
             selectedButton2 = button;
             selectedButton2.flip();
             isBusy = true;
-            if(score > 0) score--;
+            if (score > 0) score--;
 //            final Handler handler = new Handler();
 //
+            scoreText.setText(""+score);
+            return;
 //            handler.postDelayed(new Runnable() {
 //                @Override
 //                public void run() {

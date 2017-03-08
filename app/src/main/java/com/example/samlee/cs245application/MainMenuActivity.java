@@ -2,6 +2,7 @@ package com.example.samlee.cs245application;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,8 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+
+import java.io.IOException;
 
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -24,6 +28,11 @@ public class MainMenuActivity extends AppCompatActivity {
     private LayoutInflater layoutInflater;
     private RelativeLayout relativeLayout;
 
+    private EditText col;
+    private EditText row;
+
+    public static int numColumns;
+    public static int numRows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +103,33 @@ public class MainMenuActivity extends AppCompatActivity {
     }
     //Starts the concentration game
     public void playButton(View view) {
+        col = (EditText) findViewById(R.id.columnText);
+        row = (EditText) findViewById(R.id.rowText);
+        String co = col.getText().toString();
+        String ro = row.getText().toString();
+
+        AlertDialog.Builder error = new AlertDialog.Builder(this);
+        error.setTitle("Error!");
+        try {
+            numColumns = Integer.parseInt(co);
+            numRows = Integer.parseInt(ro);
+        }catch(NumberFormatException e){
+            error.setMessage("Please enter a number");
+            error.show();
+            return;
+        }
+
+        if(numColumns*numRows>20){
+            error.setMessage("Please enter a row and column that is less than 20");
+            error.show();
+            return;
+        }
+
+        if(numColumns == 5 && numRows == 4){
+            numColumns = 4;
+            numRows = 5;
+        }
+
         Intent intent = new Intent(this, Game4x4Activity.class);
         startActivity(intent);
     }
