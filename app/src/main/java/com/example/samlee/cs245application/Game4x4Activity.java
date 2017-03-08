@@ -1,14 +1,27 @@
 package com.example.samlee.cs245application;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.os.Handler;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Random;
 
 public class Game4x4Activity extends AppCompatActivity implements View.OnClickListener{
@@ -23,6 +36,10 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
 
+    private int score;
+    private String user;
+    private String gridNumber = "4x5"; //should be changed to whatever user specified grid
+
     private boolean isBusy = false;
 
     private int paused;
@@ -32,7 +49,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4);
-
+        score = 0;
         GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
 
         int numColumns = gridLayout.getColumnCount();
@@ -112,7 +129,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             buttonGraphicLocations[i] = buttonGraphicLocations[swapLocation];
 
             buttonGraphicLocations[swapLocation] = temp;
-         }
+        }
     }
 
     @Override
@@ -150,6 +167,10 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
             selectedButton1 = null;
 
+            MediaPlayer success = MediaPlayer.create(this,R.raw.success);
+            success.setLooping(false);
+            success.start();
+            score += 2;
             return;
         }
         //two cards not the same
@@ -158,7 +179,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             selectedButton2 = button;
             selectedButton2.flip();
             isBusy = true;
-
+            if(score > 0) score--;
 //            final Handler handler = new Handler();
 //
 //            handler.postDelayed(new Runnable() {
@@ -183,7 +204,6 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             isBusy = false;
         }
     }
-
     public void newGameClicked(View view){
         startActivity(new Intent(this, Game4x4Activity.class));
         player.release();
@@ -202,14 +222,49 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
                 mb.setEnabled(false);
             }
         }
+        promptScore();
     }
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this, MainMenuActivity.class));
         player.release();
         finish();
     }
+
+    private void promptScore(){
+        user = "";
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Your Score: " + score);
+        builder.setMessage("Enter Username: ");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+        final Context game = this;
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                user = input.getText().toString();
+                //ATTENTION!! ATTENTION!! WE NEED TO MAKE SURE GRID NUMBER IS CHANGED
+                writeScore("User:" + user + " - Game Type: " + gridNumber + " - Score: " + score + "\n", game);
+                startActivity(new Intent(game, HighScoresActivity.class));
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    private void writeScore(String data, Context context) {
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("scores.txt", Context.MODE_APPEND));
+            outputStreamWriter.write(data);
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
+
+
 
     @Override
     protected void onPause() {

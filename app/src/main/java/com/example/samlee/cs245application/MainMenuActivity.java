@@ -72,7 +72,10 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void highScoresButton(View view) {
-        ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_high_score,null);
+        Intent intent = new Intent(this, HighScoresActivity.class);
+        startActivity(intent);
+
+        /*ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_high_score,null);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -87,7 +90,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 popupWindow.dismiss();
                 return true;
             }
-        });
+        });*/
     }
     //Starts the concentration game
     public void playButton(View view) {
