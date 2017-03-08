@@ -175,11 +175,13 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void tryAgainClicked(View view){
-        selectedButton1.flip();
-        selectedButton2.flip();
-        selectedButton1 = null;
-        selectedButton2 = null;
-        isBusy = false;
+        if(isBusy) {
+            selectedButton1.flip();
+            selectedButton2.flip();
+            selectedButton1 = null;
+            selectedButton2 = null;
+            isBusy = false;
+        }
     }
 
     public void newGameClicked(View view){
