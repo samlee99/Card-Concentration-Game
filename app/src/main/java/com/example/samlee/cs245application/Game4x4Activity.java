@@ -185,10 +185,13 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void newGameClicked(View view){
-
+        startActivity(new Intent(this, Game4x4Activity.class));
+        player.release();
+        finish();
     }
 
     public void endGameClicked(View view){
+        //needs to be changed
         startActivity(new Intent(this, MainMenuActivity.class));
         player.release();
         finish();
