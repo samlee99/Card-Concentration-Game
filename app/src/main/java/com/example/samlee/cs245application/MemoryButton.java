@@ -63,6 +63,10 @@ public class MemoryButton extends AppCompatButton {
         return frontDrawableId;
     }
 
+    public boolean getIsFlipped() {
+        return isFlipped;
+    }
+
     public void flip()
     {
         if(isMatched)

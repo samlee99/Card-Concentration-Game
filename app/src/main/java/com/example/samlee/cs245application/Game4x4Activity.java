@@ -191,7 +191,21 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void endGameClicked(View view){
-        //needs to be changed
+        for (MemoryButton mb : buttons) {
+            if(!mb.getIsFlipped()) {
+                mb.flip();
+                mb.setMatched(true);
+                mb.setEnabled(false);
+            }
+            if(!mb.isMatched() && mb.getIsFlipped()){
+                mb.setMatched(true);
+                mb.setEnabled(false);
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
         startActivity(new Intent(this, MainMenuActivity.class));
         player.release();
         finish();
