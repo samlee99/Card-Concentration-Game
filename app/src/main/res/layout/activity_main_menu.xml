@@ -51,4 +51,30 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <EditText
+        android:id="@+id/columnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rowText"
+        android:layout_alignBottom="@+id/rowText"
+        android:layout_alignParentEnd="true"
+        android:width="150dp"
+        android:ems="10"
+        android:background="@color/white"
+        android:inputType="number"
+        android:hint="column" />
+
+    <EditText
+        android:id="@+id/rowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/play"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="31dp"
+        android:background="@color/white"
+        android:width="150dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="row" />
+
 </RelativeLayout>

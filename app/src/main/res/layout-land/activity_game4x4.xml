@@ -12,16 +12,6 @@
     tools:context="com.example.samlee.cs245application.Game4x4Activity">
 
     <Button
-        android:text="@string/try_again"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="tryAgainClicked"
-        android:id="@+id/tryAgain"
-        tools:ignore="RtlHardcoded"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/newGame" />
-
-    <Button
         android:text="@string/end_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,22 +28,11 @@
         android:layout_height="wrap_content"
         android:onClick="newGameClicked"
         android:id="@+id/newGame"
-        android:layout_marginBottom="42dp"
-        tools:ignore="RtlHardcoded"
+        android:layout_marginBottom="59dp"
         android:layout_above="@+id/endGame"
-        android:layout_alignParentEnd="true" />
-
-    <CheckBox
-        android:text="@string/mute_game_music"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pauseCheckBox"
-        android:textAlignment="viewStart"
-        android:textSize="12sp"
-        tools:ignore="RtlHardcoded"
-        android:layout_below="@+id/tryAgain"
+        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp" />
+        tools:ignore="RtlHardcoded" />
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -70,6 +49,27 @@
         android:layout_toStartOf="@+id/pauseCheckBox">
 
     </GridLayout>
+
+    <CheckBox
+        android:text="@string/mute_game_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pauseCheckBox"
+        android:textAlignment="viewStart"
+        android:textSize="12sp"
+        tools:ignore="RtlHardcoded"
+        android:layout_above="@+id/newGame"
+        android:layout_alignStart="@+id/newGame" />
+
+    <Button
+        android:text="@string/try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="tryAgainClicked"
+        android:id="@+id/tryAgain"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/grid_layout_4x4" />
 
 
 </RelativeLayout>
