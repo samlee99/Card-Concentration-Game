@@ -57,8 +57,8 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4x4);
         score = 0;
-        col = (TextView) findViewById(R.id.columnText);
-        row = (TextView) findViewById(R.id.rowText);
+        col = (EditText) findViewById(R.id.columnText);
+        row = (EditText) findViewById(R.id.rowText);
         String co = col.getText().toString();
         String ro = row.getText().toString();
         numColumns = Integer.parseInt(co);
