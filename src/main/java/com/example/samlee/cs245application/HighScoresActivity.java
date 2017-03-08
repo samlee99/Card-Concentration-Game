@@ -5,7 +5,7 @@
  * class: CS 245 – Programming Graphical User Interfaces
  *
  * assignment: Android Project
- * date last modified: 2/28/2017
+ * date last modified: 3/8/2017
  *
  * purpose: This file manages the high scores for the game.
  *
