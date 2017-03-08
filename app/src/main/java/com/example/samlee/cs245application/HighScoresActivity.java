@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Created by PC on 2/21/2017.
@@ -30,6 +35,7 @@ public class HighScoresActivity extends Activity {
         score = (TextView) findViewById(R.id.scores);
         score.setText("");
         readScore(this);
+        score.setMovementMethod(new ScrollingMovementMethod());
     }
     @Override
     public void onBackPressed() {
@@ -51,7 +57,8 @@ public class HighScoresActivity extends Activity {
 
     private String readScore(Context context) {
         String ret = "";
-
+        HashMap<String,ArrayList<String[]>> highScoreList =  new HashMap<>();
+        ArrayList<String[]> scoreList = new ArrayList<>();
         try {
             InputStream inputStream = context.openFileInput("scores.txt");
 
@@ -63,9 +70,27 @@ public class HighScoresActivity extends Activity {
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     //stringBuilder.append(receiveString);
-                    score.append(receiveString+"\n\n");
+                   // score.append(receiveString+"\n\n");
+                    //User, GameType, Score
+                    String[] recSplit = receiveString.split("-");
+                    String gameType = recSplit[1];
+                    String[] userScore = {recSplit[0],recSplit[2]};
+                    if(!highScoreList.containsKey(gameType) || highScoreList.get(gameType).size() < 3){
+                        scoreList.add(userScore);
+                        highScoreList.put(gameType,scoreList);
+                    }else{
+                        ArrayList<String[]> scoreList2 = highScoreList.get(gameType);
+                        for(int i = 0; i < scoreList2.size();++i){
+                            int savedScore = Integer.parseInt(scoreList2.get(i)[1].split(":")[1]);
+                            int currScore = Integer.parseInt(userScore[1].split(":")[1]);
+                            if(currScore > savedScore){
+                                scoreList2.remove(i);
+                                scoreList2.add(i,userScore);
+                                break;
+                            }
+                        }
+                    }
                 }
-
                 inputStream.close();
                 ret = stringBuilder.toString();
             }
@@ -73,6 +98,24 @@ public class HighScoresActivity extends Activity {
             return "";
         }
 
+        Object[] keyList = highScoreList.keySet().toArray();
+        String[] keys = new String[keyList.length];
+        for(int i = 0; i < keyList.length; ++i){
+            keys[i] = (String)keyList[i];
+        }
+
+
+        for(int i = 0; i < highScoreList.size(); ++i) {
+            score.append("Game Type: " + keys[i] + "\n--------------------\n");
+            ArrayList<String[]> list = highScoreList.get(keys[i]);
+
+            for (int j = 0; j < list.size(); ++j) {
+                score.append(list.get(j)[0] + " --- " + list.get(j)[1] + "\n\n");
+            }
+//            for(int j = 0; j < highScoreList.get(i).size(); ++j){
+            //              score.append(highScoreList.get(i).get(j)[0] + " --- " + highScoreList.get(i).get(j)[1] + "\n\n");
+            //        }
+        }
         return ret;
     }
 }

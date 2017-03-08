@@ -252,7 +252,7 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             public void onClick(DialogInterface dialog, int which) {
                 user = input.getText().toString();
                 //ATTENTION!! ATTENTION!! WE NEED TO MAKE SURE GRID NUMBER IS CHANGED
-                writeScore("User:" + user + " - Game Type: " + gridNumber + " - Score: " + score + "\n", game);
+                writeScore("User:" + user + "-Game Type:" + gridNumber + "-Score:" + score + "\n", game);
                 startActivity(new Intent(game, HighScoresActivity.class));
             }
         });
