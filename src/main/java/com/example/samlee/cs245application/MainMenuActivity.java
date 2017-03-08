@@ -27,6 +27,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private EditText col;
     private EditText row;
+    private EditText error;
 
     public static int numColumns;
     public static int numRows;
@@ -107,7 +108,24 @@ public class MainMenuActivity extends AppCompatActivity {
         String ro = row.getText().toString();
         numColumns = Integer.parseInt(co);
         numRows = Integer.parseInt(ro);
-        startActivity(intent);
+        check(numColumns, numRows);
+        error = (EditText) findViewById(R.id.Error);
+        if(check(numColumns, numRows)) {
+            //startActivity(new Intent(this, MainMenuActivity.class));
+            player.release();
+        }
+        else
+            startActivity(intent);
+    }
+
+    public boolean check(int c, int r)
+    {
+        if (((c * r) > 21)) {
+            error = (EditText) findViewById(R.id.Error);
+            error.setText("Goddmit Morty, wrong password!");
+            return true;
+        }
+        return false;
     }
 
     @Override

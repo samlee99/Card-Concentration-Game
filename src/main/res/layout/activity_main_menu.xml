@@ -60,8 +60,8 @@
         android:layout_alignParentEnd="true"
         android:width="150dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="column" />
+        android:hint="column"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/rowText"
@@ -72,7 +72,18 @@
         android:layout_marginBottom="31dp"
         android:width="150dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="row" />
+        android:hint="row"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/Error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/checkBox"
+        android:layout_marginEnd="54dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="none" />
 
 </RelativeLayout>
