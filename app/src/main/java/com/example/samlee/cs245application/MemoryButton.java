@@ -1,3 +1,15 @@
+/***************************************************************
+ * file: MemoryButton.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 3/7/2017
+ *
+ * purpose: This file deals with the button functionality.
+ *
+ ****************************************************************/
+
 package com.example.samlee.cs245application;
 
 import android.content.Context;
@@ -24,7 +36,8 @@ public class MemoryButton extends AppCompatButton {
     protected Drawable back;
 
     int sdk = android.os.Build.VERSION.SDK_INT;
-
+//method: MemoryButton
+    //purpose: This method applies the graphics to the cards, front and back
     public MemoryButton(Context context, int r, int c, int frontImageDrawableId)
     {
         super(context);
@@ -50,23 +63,26 @@ public class MemoryButton extends AppCompatButton {
 
         setLayoutParams(tempParams);
     }
-
+//method: isMatched
+    //purpose: returns whether there is a match
     public boolean isMatched() {
         return isMatched;
     }
 
+    //method: setMatched
+    //purpose: sets the cards to be matched
     public void setMatched(boolean matched) {
         isMatched = matched;
     }
 
+    //method: getFrontDrawableId
+    //purpose: this gets the number for the id
     public int getFrontDrawableId() {
         return frontDrawableId;
     }
 
-    public boolean getIsFlipped() {
-        return isFlipped;
-    }
-
+    //method: flip
+    //purpose: sets the cards whether they are flipped or not
     public void flip()
     {
         if(isMatched)
