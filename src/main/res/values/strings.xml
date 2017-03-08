@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rick and Morty Concentration</string>
+    <string name="play">Play Game</string>
+    <string name="high_score">High Scores</string>
+    <string name="credits">Credits</string>
+    <string name="pause_background_music">Pause Background Music</string>
+    <string name="mute_game_music">Pause Music</string>
+    <string name="try_again" >Try Again</string>
+    <string name="credits_sam">Sam Lee 009501037</string>
+    <string name="credits_josh">Joshua Ludwig 009725534</string>
+    <string name="credits_andrew">Andrew Nipp 009602502</string>
+    <string name="credits_steven">Steven Mai 009593233</string>
+    <string name="credits_roc">Je\'Don Carter 010279022</string>
+    <string name="new_game">New Game</string>
+    <string name="end_game">End Game</string>
+</resources>
