@@ -1,3 +1,15 @@
+/***************************************************************
+ * file: Game4x4Activity.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 3/7/2017
+ *
+ * purpose: This file is for the actual game.  It contains the
+ * logic and layout of the game.
+ *
+ ****************************************************************/
 package com.example.samlee.cs245application;
 
 import android.content.Intent;
@@ -27,7 +39,10 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 
     private int paused;
     private MediaPlayer player;
-
+    
+    //method: onCreate
+    //purpose: This creates the grid, gives the buttons the graphics
+    //and manages audio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +108,8 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
-
+//method: shuffleButtonGraphics
+    //purpose:  This method swaps the graphics of each card randomly.
     protected void shuffleButtonGraphics()
     {
         Random rand = new Random();
@@ -114,7 +130,9 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             buttonGraphicLocations[swapLocation] = temp;
          }
     }
-
+    //method: onClick
+    //purpose: This manages what happens when a card is clicked.
+    //It checks to see if it is clicked and whether the cards are matching
     @Override
     public void onClick(View view) {
         if(isBusy)
@@ -173,7 +191,8 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
 //            }, 500);
         }
     }
-
+//method: tryAgainClicked
+    //purpose: When called, it flips the chosen cards over.
     public void tryAgainClicked(View view){
         if(isBusy) {
             selectedButton1.flip();
@@ -183,7 +202,8 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             isBusy = false;
         }
     }
-
+    //method: newGameClicked
+    //purpose: When called it restarts the game
     public void newGameClicked(View view){
         startActivity(new Intent(this, Game4x4Activity.class));
         player.release();
@@ -203,14 +223,16 @@ public class Game4x4Activity extends AppCompatActivity implements View.OnClickLi
             }
         }
     }
-
+    //method: onBackPressed
+    //purpose: This goes back to the main menu
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this, MainMenuActivity.class));
         player.release();
         finish();
     }
-
+    //method: onPause
+    //purpose: This is the pause function
     @Override
     protected void onPause() {
         super.onPause();
