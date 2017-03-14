@@ -16,4 +16,26 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:text="Reset Score"
+        android:id="@+id/reset"
+        android:onClick="resetScore"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scores"
+        android:maxLines = "25"
+        android:scrollbars = "vertical"
+        android:background="@color/white"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/reset"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

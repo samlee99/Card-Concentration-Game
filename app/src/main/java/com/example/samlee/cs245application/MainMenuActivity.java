@@ -1,7 +1,20 @@
+/***************************************************************
+ * file: MainMenuActivity.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 3/8/2017
+ *
+ * purpose: This file is for the main menu.  Contains the
+ * buttons for other options.
+ *
+ ****************************************************************/
 package com.example.samlee.cs245application;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,8 +25,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+
+import java.io.IOException;
 
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -24,7 +40,13 @@ public class MainMenuActivity extends AppCompatActivity {
     private LayoutInflater layoutInflater;
     private RelativeLayout relativeLayout;
 
+    private EditText col;
+    private EditText row;
 
+    public static int numColumns;
+    public static int numRows;
+//method: onCreate
+    //purpose: This method controls the music and layout of main menu.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +73,8 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
     }
-
+//method: creditsButton
+    //purpose: Creates the credits button
     public void creditsButton(View view) {
         ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_credits,null);
 
@@ -70,9 +93,13 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
     }
-
+    //method: highScoresButton
+     //purpose: Creates the highscore button
     public void highScoresButton(View view) {
-        ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_high_score,null);
+        Intent intent = new Intent(this, HighScoresActivity.class);
+        startActivity(intent);
+
+        /*ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_high_score,null);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -87,15 +114,44 @@ public class MainMenuActivity extends AppCompatActivity {
                 popupWindow.dismiss();
                 return true;
             }
-        });
+        });*/
     }
-    //Starts the concentration game
+    //method: playButton
+    //purpose: Starts the concentration game
     public void playButton(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
+        col = (EditText) findViewById(R.id.columnText);
+        row = (EditText) findViewById(R.id.rowText);
+        String co = col.getText().toString();
+        String ro = row.getText().toString();
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.show_me_what_you_got);
+        mp.start();
+        AlertDialog.Builder error = new AlertDialog.Builder(this);
+        error.setTitle("Error!");
+        try {
+            numColumns = Integer.parseInt(co);
+            numRows = Integer.parseInt(ro);
+        }catch(NumberFormatException e){
+            error.setMessage("Please enter a number");
+            error.show();
+            return;
+        }
 
+        if(numColumns*numRows>20){
+            error.setMessage("Please enter a row and column that is less than 20");
+            error.show();
+            return;
+        }
+
+        if(numColumns == 5 && numRows == 4){
+            numColumns = 4;
+            numRows = 5;
+        }
+
+        Intent intent = new Intent(this, Game4x4Activity.class);
+        startActivity(intent);
+    }
+//method: onPause
+    //purpose: Pause functionality
     @Override
     protected void onPause() {
         super.onPause();

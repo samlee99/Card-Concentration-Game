@@ -1,27 +1,41 @@
+/***************************************************************
+ * file: SplashActivity.java
+ * author: Sam Lee, Andrew Nipp, Joshua Ludwig, Steven Mai, Je'Don Carter
+ * class: CS 245 – Programming Graphical User Interfaces
+ *
+ * assignment: Android Project
+ * date last modified: 2/28/2017
+ *
+ * purpose: This file launches the splash screen for the app.
+ *
+ ****************************************************************/
 package com.example.samlee.cs245application;
 
-import android.app.ActivityManager;
-import android.content.ComponentName;
-import android.content.Context;
-import android.media.MediaPlayer;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.Intent;
-import android.widget.Toast;
-
-import java.util.List;
-
-/**
- * Created by PC on 2/20/2017.
- */
 
 public class SplashActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    //method: onCreate
+    // purpose: Create a splash thread and runs it for 3 seconds.
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = new Intent(this, MainMenuActivity.class);
-        startActivity(intent);
-        finish();
+        setContentView(R.layout.activity_splash2);
+        Thread splashThread = new Thread(){
+            @Override
+            public void run() {
+                try {
+                    sleep(3000);
+                    Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
+                    startActivity(intent);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        splashThread.start();
     }
 }
